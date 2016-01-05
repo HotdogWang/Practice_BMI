@@ -1,0 +1,15 @@
+<resources>
+    <string name="app_name">BMI</string>
+
+    <string name="Male">男性</string>
+    <string name="Female">女性</string>
+
+    <string name="NameHint">請輸入姓名</string>
+    <string name="AgeHint">請輸入年齡</string>
+    <string name="Next">下一步</string>
+
+    <string name="GenderError">請選擇性別</string>
+    <string name="NameError">請輸入姓名</string>
+    <string name="AvgError">請輸入年齡</string>
+
+</resources>
