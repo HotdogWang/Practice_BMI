@@ -15,11 +15,10 @@ import android.widget.Toast;
 public class ActivityInfo extends AppCompatActivity {
 
     private Context context;
-    private ImageView iv_Photo;
-    private RadioGroup rg_Gender;
-    private RadioButton rb_Male, rb_Female;
-    private EditText et_Name, et_Age;
     private Button btnNext;
+
+    public static String INTENT_NAME="name";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,28 +35,10 @@ public class ActivityInfo extends AppCompatActivity {
     }
 
     private void initUi() {
-        iv_Photo = (ImageView) findViewById(R.id.iv_Photo);
-        rg_Gender = (RadioGroup) findViewById(R.id.rg_Gender);
-        rb_Male = (RadioButton) findViewById(R.id.rb_Male);
-        rb_Female = (RadioButton) findViewById(R.id.rb_Female);
-        et_Name = (EditText) findViewById(R.id.et_Name);
-        et_Age = (EditText) findViewById(R.id.et_Age);
         btnNext = (Button) findViewById(R.id.btn_Next);
     }
 
     private void initAction() {
-
-        rg_Gender.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-                if (rb_Male.isChecked())
-                {
-                    iv_Photo.setImageDrawable(getResources().getDrawable(R.mipmap.male));
-                }else{
-                    iv_Photo.setImageDrawable(getResources().getDrawable(R.mipmap.female));
-                }
-            }
-        });
 
         btnNext.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -69,18 +50,7 @@ public class ActivityInfo extends AppCompatActivity {
     }
 
     private void Check() {
-        if (!rb_Male.isChecked() && !rb_Female.isChecked()){
-            Toast.makeText(context, R.string.GenderError,Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (et_Name.getText().toString().matches("")){
-            Toast.makeText(context, R.string.NameError,Toast.LENGTH_SHORT).show();
-            return;
-        }
-        if (et_Age.getText().toString().matches("")){
-            Toast.makeText(context, R.string.AvgError,Toast.LENGTH_SHORT).show();
-            return;
-        }
+
 
         Intent i =new Intent(context, android.content.pm.ActivityInfo.class);
 

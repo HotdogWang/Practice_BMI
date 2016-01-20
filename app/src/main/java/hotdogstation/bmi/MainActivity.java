@@ -1,6 +1,7 @@
 package hotdogstation.bmi;
 
 import android.content.Context;
+import android.content.Intent;
 import android.opengl.ETC1;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -81,5 +82,10 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(context, R.string.AvgError,Toast.LENGTH_SHORT).show();
             return;
         }
+
+        Intent intent = new Intent(context, ActivityInfo.class);
+        intent.putExtra(ActivityInfo.INTENT_NAME,et_Name.getText());
+
+
     }
 }
