@@ -85,7 +85,9 @@ public class MainActivity extends AppCompatActivity {
 
         Intent intent = new Intent(context, ActivityInfo.class);
         intent.putExtra(ActivityInfo.INTENT_NAME,et_Name.getText());
-
+        intent.putExtra(ActivityInfo.INTENT_AGE, et_Age.getText());
+        intent.putExtra(ActivityInfo.INTENT_Gender, rb_Female.isChecked() ? false: true);
+        startActivity(intent);
 
     }
 }
