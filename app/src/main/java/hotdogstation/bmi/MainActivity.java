@@ -2,6 +2,7 @@ package hotdogstation.bmi;
 
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.drawable.Animatable;
 import android.opengl.ETC1;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -84,10 +85,11 @@ public class MainActivity extends AppCompatActivity {
         }
 
         Intent intent = new Intent(context, ActivityInfo.class);
-        intent.putExtra(ActivityInfo.INTENT_NAME,et_Name.getText());
-        intent.putExtra(ActivityInfo.INTENT_AGE, et_Age.getText());
-        intent.putExtra(ActivityInfo.INTENT_Gender, rb_Female.isChecked() ? false: true);
-        startActivity(intent);
+        intent.putExtra(ActivityInfo.INTENT_NAME,et_Name.getText().toString());
+        intent.putExtra(ActivityInfo.INTENT_AGE, Integer.parseInt(et_Age.getText().toString()));
+        intent.putExtra(ActivityInfo.INTENT_GENDER, rb_Female.isChecked() ? false: true);
 
+        startActivity(intent);
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
     }
 }

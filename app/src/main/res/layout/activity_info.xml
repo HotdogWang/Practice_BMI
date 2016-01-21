@@ -1,27 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
+    android:padding="32dp"
+    android:gravity="center"
+    android:orientation="vertical"
     tools:context="hotdogstation.bmi.ActivityInfo">
 
     <LinearLayout
-        android:orientation="vertical"
-        android:gravity="center|top"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
 
-
-        <Button
-            android:id="@+id/btn_Next"
-            android:layout_margin="6dp"
+        <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/Next"/>
+            android:text="@string/height"/>
+
+        <TextView
+            android:id="@+id/tvHeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="160"/>
+    </LinearLayout>
+
+    <SeekBar
+        android:id="@+id/sbHeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="160"
+        android:max="200"
+        android:layout_marginBottom="16dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/weight"/>
+
+        <TextView
+            android:id="@+id/tvWeight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="60"/>
 
     </LinearLayout>
-</RelativeLayout>
+
+    <SeekBar
+        android:id="@+id/sbWeight"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:progress="60"
+        android:max="120"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_Next"
+        android:layout_marginTop="16dp"
+        android:layout_margin="6dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Next"/>
+
+</LinearLayout>
