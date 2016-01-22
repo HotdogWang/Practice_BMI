@@ -11,7 +11,7 @@ public class Settings {
     private static Settings settings;
 
     private Context context;
-    private SharedPreferences sharedPreferences;
+    private static SharedPreferences sharedPreferences;
 
     public static final String SETTING_NAME = "setting";
     public static final String NAME = "name";
@@ -27,7 +27,7 @@ public class Settings {
         this.sharedPreferences = context.getSharedPreferences(SETTING_NAME, Context.MODE_PRIVATE);
     }
 
-    public static Settings getIntence(Context context) {
+    public static Settings getInstance(Context context) {
         if (settings == null) {
             settings = new Settings(context);
             settings.loadDefault();

@@ -10,7 +10,9 @@
 
     <string name="NameHint">請輸入姓名</string>
     <string name="AgeHint">請輸入年齡</string>
-    <string name="Next">下一步</string>
+    <string name="next">下一步</string>
+    <string name="previous">上次紀錄</string>
+    <string name="no_record">沒有上次的紀錄</string>
     <string name="GenderError">請選擇性別</string>
     <string name="NameError">請輸入姓名</string>
     <string name="AvgError">請輸入年齡</string>
@@ -19,4 +21,10 @@
     <string name="error_height_weight">身高與體重不能為0</string>
     <string name="finish">完成</string>
 
+    <string name="level0">過輕</string>
+    <string name="level1">正常</string>
+    <string name="level2">過重</string>
+    <string name="level3">輕度肥胖</string>
+    <string name="level4">中度肥胖</string>
+    <string name="level5">重度肥胖</string>
 </resources>

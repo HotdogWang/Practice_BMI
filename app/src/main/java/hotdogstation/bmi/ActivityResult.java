@@ -82,10 +82,31 @@ public class ActivityResult extends AppCompatActivity {
         result +=(getString(R.string.age)+": " + age + "\n");
         result +=(getString(R.string.height)+": " + height + "\n");
         result +=(getString(R.string.weight)+": " + weight + "\n");
-        result +=(getString(R.string.bmi)+": " + bmi + "\n");
+        result +=(getString(R.string.bmi)+": " + bmi +" "+getBMIInfo(bmi));
 
         tvResult.setText(result);
+    }
 
+    private String getBMIInfo(float bmi){
+        if(bmi<18.5f){
+            return getString(R.string.level0);
+        }
+        if(bmi >=18.5f&& bmi<24f){
+            return getString(R.string.level1);
+        }
+        if(bmi >=24f&& bmi<27f){
+            return getString(R.string.level2);
+        }
+        if(bmi >=27f&& bmi<30f){
+            return getString(R.string.level3);
+        }
+        if(bmi >=30f&& bmi<35f){
+            return getString(R.string.level4);
+        }
+        if(bmi >=35f){
+            return getString(R.string.level5);
+        }
+        return "";
     }
 
 }

@@ -2,6 +2,7 @@ package hotdogstation.bmi;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.drawable.Animatable;
 import android.opengl.ETC1;
 import android.support.v7.app.AppCompatActivity;
@@ -22,6 +23,9 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton rb_Male, rb_Female;
     private EditText et_Name, et_Age;
     private Button btnNext;
+    private Button btnPreview;
+
+    private Settings settings;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void init() {
         this.context = this;
+        this.settings = Settings.getInstance(context);
     }
 
     private void initUi() {
@@ -45,6 +50,7 @@ public class MainActivity extends AppCompatActivity {
         et_Name = (EditText) findViewById(R.id.et_Name);
         et_Age = (EditText) findViewById(R.id.et_Age);
         btnNext = (Button) findViewById(R.id.btn_Next);
+        btnPreview = (Button) findViewById(R.id.btnPrevious);
     }
 
     private void initAction() {
@@ -67,6 +73,17 @@ public class MainActivity extends AppCompatActivity {
                 Check();
             }
         });
+
+        btnPreview.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Preview();
+            }
+        });
+
+    }
+
+    private void Preview() {
 
     }
 
