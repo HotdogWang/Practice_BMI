@@ -2,9 +2,6 @@ package hotdogstation.bmi;
 
 import android.content.Context;
 import android.content.Intent;
-import android.content.SharedPreferences;
-import android.graphics.drawable.Animatable;
-import android.opengl.ETC1;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -23,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private RadioButton rb_Male, rb_Female;
     private EditText et_Name, et_Age;
     private Button btnNext;
-    private Button btnPreview;
+    private Button btnPrevious;
 
     private Settings settings;
 
@@ -50,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
         et_Name = (EditText) findViewById(R.id.et_Name);
         et_Age = (EditText) findViewById(R.id.et_Age);
         btnNext = (Button) findViewById(R.id.btn_Next);
-        btnPreview = (Button) findViewById(R.id.btnPrevious);
+        btnPrevious = (Button) findViewById(R.id.btnPrevious);
     }
 
     private void initAction() {
@@ -74,17 +71,22 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnPreview.setOnClickListener(new View.OnClickListener() {
+        btnPrevious.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Preview();
+                Previous();
             }
         });
 
     }
 
-    private void Preview() {
-
+    private void Previous() {
+        Intent intent = new Intent(context, ActivityResult.class);
+        intent.putExtra(ActivityResult.INTENT_NAME, settings.getNAME());
+        intent.putExtra(ActivityResult.INTENT_AGE, settings.getAGE());
+        intent.putExtra(ActivityResult.INTENT_GENDER, settings.getGENDER());
+        intent.putExtra(ActivityResult.INTENT_HEIGHT, settings.getHEIGHT());
+        intent.putExtra(ActivityResult.INTENT_WEIGHT, settings.getWEIGHT());
     }
 
     private void Check() {
