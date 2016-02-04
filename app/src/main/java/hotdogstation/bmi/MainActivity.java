@@ -89,6 +89,9 @@ public class MainActivity extends AppCompatActivity {
         intent.putExtra(ActivityResult.INTENT_GENDER, settings.getGENDER());
         intent.putExtra(ActivityResult.INTENT_HEIGHT, settings.getHEIGHT());
         intent.putExtra(ActivityResult.INTENT_WEIGHT, settings.getWEIGHT());
+
+        startActivity(intent);
+        overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
     }
 
     private void Check() {

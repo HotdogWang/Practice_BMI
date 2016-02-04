@@ -26,6 +26,8 @@ public class ActivityResult extends AppCompatActivity {
     private TextView tvResult;
     private Button btnFinish;
 
+    private Settings settings;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -41,6 +43,7 @@ public class ActivityResult extends AppCompatActivity {
 
     private void init() {
         this.context = this;
+        this.settings = Settings.getInstance(context);
     }
 
     private void initUi() {
@@ -62,8 +65,11 @@ public class ActivityResult extends AppCompatActivity {
         btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                saveData();
                 Intent intent = new Intent(context, MainActivity.class);
                 startActivity(intent);
+                overridePendingTransition(R.anim.abc_fade_in, R.anim.abc_fade_out);
+
             }
         });
     }
@@ -106,4 +112,11 @@ public class ActivityResult extends AppCompatActivity {
         return "";
     }
 
+    private void saveData() {
+        settings.setNAME(name);
+        settings.setAGE(age);
+        settings.setGENDER(gender);
+        settings.setHEIGHT(height);
+        settings.setWEIGHT(weight);
+    }
 }
