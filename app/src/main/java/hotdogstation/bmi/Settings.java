@@ -9,7 +9,6 @@ import android.content.SharedPreferences;
 public class Settings {
     private static Settings settings;
 
-    private Context context;
     private SharedPreferences sharedPreferences;
 
     public static final String SETTING_NAME = "setting";
@@ -26,7 +25,6 @@ public class Settings {
     public final int DEFAULT_WEIGHT=0;
 
     private Settings(Context context) {
-        this.context = context;
         this.sharedPreferences = context.getSharedPreferences(SETTING_NAME,Context.MODE_PRIVATE);
     }
 

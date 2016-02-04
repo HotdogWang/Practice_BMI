@@ -46,7 +46,7 @@ public class MainActivity extends AppCompatActivity {
         rb_Female = (RadioButton) findViewById(R.id.rb_Female);
         et_Name = (EditText) findViewById(R.id.et_Name);
         et_Age = (EditText) findViewById(R.id.et_Age);
-        btnNext = (Button) findViewById(R.id.btn_Next);
+        btnNext = (Button) findViewById(R.id.btnNext);
         btnPrevious = (Button) findViewById(R.id.btnPrevious);
     }
 
@@ -64,12 +64,14 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        btnNext.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Check();
-            }
-        });
+        if (btnNext != null) {
+            btnNext.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Check();
+                }
+            });
+        }
 
         btnPrevious.setOnClickListener(new View.OnClickListener() {
             @Override
